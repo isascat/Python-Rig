@@ -1,5 +1,12 @@
 """
-module for making rig controls 
+    Module for making rig controls 
+
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com
+
+        
 """
 
 import maya.cmds as mc
