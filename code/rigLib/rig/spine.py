@@ -69,7 +69,6 @@ def build(
                                 parent = bodyCtrl.C, shape = 'circleZ' )
 
     # attach controls
-#     mc.hide( middleCtrl.C )
     mc.parentConstraint( chestCtrl.C, pelvisCtrl.C, middleCtrl.Off,sr = ['x', 'y', 'z'], mo = 1 )
 
 
@@ -78,10 +77,7 @@ def build(
     mc.parent( spineCurveClusters[2], middleCtrl.C )
     mc.parent( spineCurveClusters[:2], pelvisCtrl.C )
      
-#     mc.parent( spineCurveClusters[3:], chestCtrl.C )
-#     mc.parent( spineCurveClusters[2], middleCtrl.C )
-#     mc.parent( spineCurveClusters[:2], pelvisCtrl.C )
-#     
+
     # attach chest joint
      
     mc.orientConstraint( chestCtrl.C, spineJoints[-1], mo = 1 )
