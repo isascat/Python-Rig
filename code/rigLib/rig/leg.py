@@ -113,19 +113,7 @@ def build(
         
         mc.parent( scapulaIk, scapulaCtrl.C )
         mc.pointConstraint( scapulaCtrl.C, scapulaJnt )
-    
-#     # make pole vector connection line
-#     
-#     pvLinePos1 = mc.xform( legJoints[1], q = 1, t = 1, ws = 1 )
-#     pvLinePos2 = mc.xform( pvLocator, q = 1, t = 1, ws = 1 )
-#     poleVectorCrv = mc.curve( n = prefix + 'Pv_crv', d = 1, p = [ pvLinePos1, pvLinePos2 ] )
-#     mc.cluster( poleVectorCrv + '.cv[0]', n = prefix + 'Pv1_cls', wn = [ legJoints[1], legJoints[1] ], bs = True )
-#     mc.cluster( poleVectorCrv + '.cv[1]', n = prefix + 'Pv2_cls', wn = [ poleVectorCtrl.C, poleVectorCtrl.C ], bs = True )
-#     mc.parent( poleVectorCrv, rigmodule.controlsGrp )
-#     mc.setAttr( poleVectorCrv + '.template', 1 )
-#     mc.setAttr( poleVectorCrv + '.it', 0 )
-    
-    
+
     return { 'module':rigmodule, 'baseAttachGrp':baseAttachGrp, 'bodyAttachGrp':bodyAttachGrp }
     
     
