@@ -1,6 +1,12 @@
 """
-leg @ rig
+    ARM - Rig
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com   
 """
+
+
 
 import maya.cmds as mc
 
@@ -50,10 +56,7 @@ def build(
         
     footCtrl = control.Control( prefix = prefix + 'Foot', translateTo = legJoints[2], scale = rigScale * 15,
                                 parent = rigmodule.controlsGrp, shape = 'circleY' )
-    
-#     ballCtrl = control.Control( prefix = prefix + 'Ball', translateTo = legJoints[3], rotateTo = legJoints[3],
-#                                        scale = rigScale * 2, parent = footCtrl.C, shape = 'circleZ' )
-    
+
     poleVectorCtrl = control.Control( prefix = prefix + 'PV', translateTo = pvLocator, scale = rigScale,
                                 parent = rigmodule.controlsGrp, shape = 'sphere' )
       
@@ -80,10 +83,7 @@ def build(
         mc.hide( scapulaIk )
     
     legIk = mc.ikHandle( n = prefix + 'Main_ikh', sol = 'ikRPsolver', sj = legJoints[1], ee = legJoints[3] )[0]
-#     ballIk = mc.ikHandle( n = prefix + 'Ball_ikh', sol = 'ikSCsolver', sj = legJoints[3], ee = legJoints[4] )[0]
-#     mainToeIk = mc.ikHandle( n = prefix + 'MainToe_ikh', sol = 'ikSCsolver', sj = legJoints[3], ee = legJoints[4] )[0]
-    
-#     mc.hide( legIk, ballIk, mainToeIk )
+
     mc.hide( legIk )
 
     for i, topToeJnt in enumerate( topToeJoints ):
@@ -119,16 +119,7 @@ def build(
     
     # make pole vector connection line
     
-#     pvLinePos1 = mc.xform( legJoints[1], q = 1, t = 1, ws = 1 )
-#     pvLinePos2 = mc.xform( pvLocator, q = 1, t = 1, ws = 1 )
-#     poleVectorCrv = mc.curve( n = prefix + 'Pv_crv', d = 1, p = [ pvLinePos1, pvLinePos2 ] )
-#     mc.cluster( poleVectorCrv + '.cv[0]', n = prefix + 'Pv1_cls', wn = [ legJoints[1], legJoints[1] ], bs = True )
-#     mc.cluster( poleVectorCrv + '.cv[1]', n = prefix + 'Pv2_cls', wn = [ poleVectorCtrl.C, poleVectorCtrl.C ], bs = True )
-#     mc.parent( poleVectorCrv, rigmodule.controlsGrp )
-#     mc.setAttr( poleVectorCrv + '.template', 1 )
-#     mc.setAttr( poleVectorCrv + '.it', 0 )
-#     
-    
+
     return { 'module':rigmodule, 'baseAttachGrp':baseAttachGrp, 'bodyAttachGrp':bodyAttachGrp }
     
     
