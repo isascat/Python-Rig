@@ -92,15 +92,6 @@ def build(
     mc.parent( neckIk, headMainCtrl.C)
     mc.parent( neckloc, middleCtrl.C )
 
-#    # make IK handle
-#     
-#     neckIk = mc.ikHandle( n = prefix + '_ikh', sol = 'ikSplineSolver', sj = neckJoints[0], ee = neckJoints[-1],
-#                            c = neckCurve, ccv = 0, parentCurve = 0 )[0]
-#     
-#     mc.hide( neckIk )
-#     mc.parent( neckIk, rigmodule.partsNoTransGrp )
-#     
-      
     # setup IK twist
       
     mc.setAttr( neckIk + '.dTwistControlEnable', 1 )
