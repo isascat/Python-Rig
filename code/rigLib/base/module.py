@@ -1,7 +1,13 @@
 """
-module for making top rig structure and rig module
-"""
+    Module for making top rig structure and rig module
 
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com
+
+        
+"""
 import maya.cmds as mc
 from imageop import scale
 sceneObjectType = 'rig'
@@ -161,7 +167,6 @@ class Module():
         self.partsNoTransGrp = mc.group( n = 'PartsNoTrans_grp', em = 1, p = self.topGrp )
         
         mc.setAttr( self.partsNoTransGrp + '.it', 0, l = 1 )
-        """ l = 1 what mean?"""
         
         # parent module
         
