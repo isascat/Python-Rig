@@ -1,7 +1,17 @@
 """
-Dino dragon rig setup
-main module
+    Python rig setup
+    
+    main module
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com
+    
+    Description:
+        A python-based rig in Maya.
+        
 """
+
 
 from rigLib.base import control
 from rigLib.base import module
@@ -11,7 +21,6 @@ from rigLib.rig import neck
 from rigLib.rig import ikChain
 from rigLib.rig import leg
 from rigLib.rig import arm
-# from rigLib.rig import headParts
 
 from rigLib.utils import joint
  
@@ -80,11 +89,6 @@ def makeControlSetup( baseRig ):
     make control setup
     """
       
-#     # adjust orientation of feet
-#     mc.setAttr( 'l_hand1_jnt.jo', 138.28570432475698, -48.90539524404269, -30.284152362844438 )
-#     mc.setAttr( 'r_hand1_jnt.jo', 138.28570432475684, -48.905395244042566, -30.28415236284434 )
-#       
-    # spine
       
     spineJoints = ['hip','spine1_jnt', 'spine2_jnt', 'spine3_jnt', 'spine4_jnt']
       
@@ -224,18 +228,3 @@ def makeControlSetup( baseRig ):
        
     mc.parentConstraint( spineJoints[-2], lLegRig['baseAttachGrp'], mo = 1 )
     mc.parentConstraint( spineRig['bodyCtrl'].C, lLegRig['bodyAttachGrp'], mo = 1 )      
-#     # head parts
-#       
-#     muzzleJoints = ['muzzle1_jnt', 'muzzle2_jnt']
-#       
-#     headParts.build( 
-#                   headJnt = headJnt,
-#                   jawJnt = jawJnt,
-#                   muzzleJoints = muzzleJoints,
-#                   leftEyeJnt = 'l_eye1_jnt',
-#                   rightEyeJnt = 'r_eye1_jnt',
-#                   prefix = 'headParts',
-#                   rigScale = sceneScale,
-#                   baseRig = baseRig
-#                   )
-
