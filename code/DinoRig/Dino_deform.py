@@ -1,7 +1,12 @@
 """
-Dino rig setup
-deformation setup
+    Python rig deformation setup
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com
+        
 """
+
 
 import maya.cmds as mc
 import maya.mel as mm
@@ -64,7 +69,6 @@ def maketwistJoints( baseRig, parentJoints ):
      
     for parentJnt in parentJoints:
          
-#         prefix = name.removeSuffix( parentJnt) 
         prefix = parentJnt + '_'
         parentJntChild = mc.listRelatives( parentJnt, c = 1, type = 'joint' )[0]
          
@@ -154,6 +158,4 @@ def loadSkinWeights( characterName, geoList = [] ):
         
         mc.select( bodyMidresGeo )
         
-        bSkinSaver.bLoadSkinValues( loadOnSelection = True, inputFile = fullpathWtFile )
-#         bSkinSaver.bLoadSkinValues( loadOnSelection = False, inputFile = fullpathWtFile )
-     
+        bSkinSaver.bLoadSkinValues( loadOnSelection = True, inputFile = fullpathWtFile )     
