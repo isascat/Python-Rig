@@ -1,6 +1,13 @@
 """
-main project file with central variables
+    Main project file with central variables
+    
+    Copyright (C) 2017 Isabelle Chen
+    All Rights Reserved.
+    isafx.com
+        
 """
 
 sceneScale = 1.0
-mainProjectPath = 'C:/Users/Isabelle/Documents/2017Works/Maya/Dinosour/assets/'
+
+## Set your project path
+mainProjectPath = ''
